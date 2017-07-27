@@ -19,70 +19,30 @@
  @import "bootstrap";
  @import "font-awesome";
 
-
- .jumbotron {
-   background-image:url('http://fullstack-public.oss-cn-qingdao.aliyuncs.com/2017-04-15-542213.png');
+ .first-page {
+   background-image:url('https://ws4.sinaimg.cn/large/006tNc79gy1fhyig8c9pij31kw0w07wi.jpg');
    background-repeat: no-repeat;
    background-size: cover;
-   padding-bottom: 130px;
- }
-
-.title {
-   background-color: rgba(250,250,250,0.39);//背景颜色含透明度
-   max-width: 500px;//最大宽度
-   margin-top: 200px;//和顶部拉开距离
-   margin-bottom: 0;//这样就可以紧接息面的描述文字
-   border-top-right-radius: 3px;//右上角圆边
-   border-top-left-radius: 3px;//左上角圆边
- }
-
-  .jumbotron h1, .jumbotron .h1 {
-      text-align: left;//文字左对齐
-      color: #222;  //字体颜色
-
-      padding: 50px 20px 0;//上50px，左右20px，下0
-  }
-
-  .jumbotron p {
-      margin: 0;//上下左右margin为0
-      font-size: 26px;//字体大小
-      max-width: 500px;//最大宽度
-      background-color: rgba(250, 250, 250, 0.39);//背景颜色含透明度
-      padding: 20px;//上下左右padding为20px
-      text-align:left;//文字左对齐
-      color: #222;//字体颜色
-
-      border-bottom-right-radius: 3px;//右下角圆边
-      border-bottom-left-radius: 3px;//左下角圆边
-  }
-
- .slogan {
-   margin-top: 10px;
-   margin-bottom: 50px;
-   text-align: center;
-   color: white;
-   top: 12px;
  }
 
  .lead {
-   margin-bottom: 60px;
-   text-align: center;
-   color: white;
+  margin-top: 60%;
+  margin-bottom: 100px;
+  text-align: center;
+
+}
+
+.btn-block {
+  color: white;//字体颜色
+  background-color: rgba(255, 134, 229, 0.47);
  }
 
- .caption {
-  margin: 30px;
-  text-align: center;
-  top: 20px;
-}
+ .btn-block:hover {
+   color: yellow;
+   background-color: rgba(212, 128, 194, 0.62);
+ }
 
-.thumbnail {
-    border: 0 none;
-    box-shadow: none;
-    margin-top: 60px;
-}
-
-.custab{
+ .custab{
   border: 1px solid #ccc;
 
   padding: 5px;
@@ -99,9 +59,7 @@
 
  .navbar-default {
      background-color: #212121;  //背景颜色
-
      border-color: #212121; //边框色
-
      margin-bottom: 0; //底部 margin 不撑开距离
  }
 
