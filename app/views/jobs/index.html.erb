@@ -9,7 +9,6 @@
         </li>
         <li>
             <%= link_to("按照薪资上限排序", jobs_path(:order => "by_upper_bound")) %>
-
         </li>
         <li>
           <%= link_to("按照发表时间排序", jobs_path ) %>
@@ -24,6 +23,9 @@
       <td>职缺</td>
       <td>薪资下限</d>
       <td>薪资上限</td>
+      <td>工作来源</td>
+      <td>城市</td>
+      <td>公司规模</td>
       <td>刊登时间</td>
     </tr>
   </thead>
@@ -37,6 +39,15 @@
     </td>
     <td>
       <%= job.wage_upper_bound %>
+    </td>
+    <td>
+      <%= job.source %>
+    </td>
+    <td>
+      <%= job.place %>
+    </td>
+    <td>
+      <%= job.scale %>
     </td>
     <td>
       <%= job.created_at %>
