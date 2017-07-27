@@ -1,0 +1,31 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="panel-title">
+                    <%= resume.user.email %> |
+                    <%= resume.created_at %>
+                </h3>
+            </div>
+
+        </div>
+    </div>
+    <div class="panel-body">
+        <div class="trix-content">
+          <%= link_to(resume.content, resume_path(resume)) %>
+
+        </div>
+
+        <hr>
+        <%= link_to("编辑", edit_resume_path(resume)) %> |
+        <%= link_to("删除", resume_path(resume), :method => :delete, :data => { :confirm => "Are you sure?" }) %>        
+
+        <% if resume.attachment.present? %>
+          <i class="fa fa-paperclip"> </i>
+          <%= link_to("Download Resume", resume.attachment_url) %>
+        <% else %>
+           No Attachment
+        <% end %>
+    </div>
+
+</div>

@@ -2,7 +2,7 @@ class ResumesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destroy]
 
   def index
-    @resumes = Resume.all
+    @resumes = Resume.order('created_at DESC')
   end
 
   def show
