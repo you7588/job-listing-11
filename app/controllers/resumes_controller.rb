@@ -5,19 +5,16 @@ class ResumesController < ApplicationController
   end
 
   def new
-    @job = Job.find(params[:job_id])
     @resume = Resume.new
   end
 
   def create
-    @job = Job.find(params[:job_id])
     @resume = Resume.new(resume_params)
-    @resume.job = @job
     @resume.user = current_user
 
     if @resume.save
       flash[:notice] = "成功提交履历"
-      redirect_to job_path(@job)
+      redirect_to resumes_path
     else
       render :new
     end
