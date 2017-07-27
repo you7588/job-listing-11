@@ -1,6 +1,9 @@
 <h1> <%= @job.title %></h1>
 
-<p>  <%= simple_format(@job.description) %></p>
+<p>工作内容：<%= simple_format(@job.description) %></p>
+<p>工作来源：<%= simple_format(@job.source) %></p>
+<p>城市：<%= simple_format(@job.place) %></p>
+<p>公司规模：<%= simple_format(@job.scale) %></p>
 
 <div class="text-center">
   <%= link_to("投交履历", new_job_resume_path(@job), :style => "font-size: 30px; text-decoration: underline;") %>
