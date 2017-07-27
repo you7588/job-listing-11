@@ -1,6 +1,9 @@
 class ResumesController < ApplicationController
   before_action :authenticate_user!
 
+  def index
+  end
+
   def new
     @job = Job.find(params[:job_id])
     @resume = Resume.new
