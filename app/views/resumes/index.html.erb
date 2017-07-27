@@ -1,5 +1,25 @@
 <h1>我的简历</h1>
 
+
+<table class="table table-bordered">
+  <% @resumes.each do |resume| %>
+  <tr>
+    <td>
+      <%= link_to(resume.content, resume_path(resume)) %>
+    </td>
+    <td>
+      <%= link_to("编辑", edit_resume_path(resume)) %> |
+      <%= link_to("删除", resume_path(resume), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
+    </td>
+    <td>
+      <%= resume.created_at %>
+    </td>
+  </tr>
+  <% end %>
+</table>
+
+
+
 <div class="text-center">
-  <%= link_to("修改简历", new_resume_path, :style => "font-size: 30px; text-decoration: underline;") %>
+  <%= link_to("新建简历", new_resume_path, :style => "font-size: 30px; text-decoration: underline;") %>
 </div>
