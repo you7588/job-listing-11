@@ -8,7 +8,6 @@
   <thead>
     <tr>
       <td>职缺</td>
-      <td>收到履历数量</td>
       <td>薪资</td>
       <td>工作来源</td>
       <td>城市</td>
@@ -23,7 +22,6 @@
       <%= render_job_status(job) %>
       <%= link_to(job.title, admin_job_path(job)) %>
     </td>
-    <td> <%= link_to(job.resumes.count, admin_job_resumes_path(job)) %> </td>
     <td> <%= job.wage_lower_bound %> ~ <%= job.wage_upper_bound %></td>
     <td> <%= job.source %></td>
     <td> <%= job.place %></td>
