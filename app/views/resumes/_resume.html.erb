@@ -3,8 +3,7 @@
         <div class="row">
             <div class="col-md-12">
                 <h3 class="panel-title">
-                    <%= resume.user.email %> |
-                    <%= resume.created_at %>
+                    创建时间：<%= resume.created_at %>
                 </h3>
             </div>
 
@@ -12,13 +11,30 @@
     </div>
     <div class="panel-body">
         <div class="trix-content">
-          <%= link_to(resume.content, resume_path(resume)) %>
+          <h4>1.一句话形容自己</h4>
+          <hr>
+          <%= resume.one_word   %>
+          <h4>2. 200 字自我介绍　</h4>
+          <hr>
+          <%= resume.content  %>
+          <h4>3. 用 2-3 段介绍过去 2 年在做什么　（自己会什么技能）</h4>
+          <hr>
+          <%= resume.experience  %>
+          <h4>4. 为什么想要应征这份工作</h4>
+          <hr>
+          <%= resume.why %>
+          <h4>5. 自己对这份职缺的竞争优势</h4>
+          <hr>
+          <%= resume.prove %>
+          <h4>6. 联络资讯　（CALL TO ACTION）</h4>
+          <hr>
+          <%= resume.action  %>
 
         </div>
 
         <hr>
         <%= link_to("编辑", edit_resume_path(resume)) %> |
-        <%= link_to("删除", resume_path(resume), :method => :delete, :data => { :confirm => "Are you sure?" }) %>        
+        <%= link_to("删除", resume_path(resume), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
 
         <% if resume.attachment.present? %>
           <i class="fa fa-paperclip"> </i>

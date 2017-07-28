@@ -1,13 +1,14 @@
 <h1>新建简历</h1>
 
 <%= simple_form_for @resume do |f| %>
-  <%= f.input :one_word %>
-  <%= f.input :content %>
-  <%= f.input :experience %>
-  <%= f.input :why %>
-  <%= f.input :prove %>
-  <%= f.input :action %>
-  <%= f.input :attachment %>
+  <%= f.input :one_word, :label => "一句话形容自己 （对自己的描述）" %>
+  <%= f.input :content, :label => "200 字自我介绍　（对方想要找的人，从求职需求里面）"%>
+  <%= f.input :experience, :label => "用 2-3 段介绍过去 2 年在做什么　（自己会什么技能）"%>
+  <%= f.input :why, :label => "为什么想要应征这份工作　（自己对公司的研究与未来可以进行的贡献）"%>
+  <%= f.input :prove, :label => "自己对这份职缺的竞争优势　（证明自己可以）"%>
+  <%= f.input :action, :label => "联络资讯　（CALL TO ACTION）"%>
+  <%= f.input :attachment, :label => "附件"%>
+
 
   <%= f.submit "送出" %>
 <% end %>
