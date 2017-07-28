@@ -1,8 +1,13 @@
 <h1>编辑简历</h1>
 
 <%= simple_form_for @resume do |f| %>
-  <%= f.input :content %>
-  <%= f.input :attachment %>
+<%= f.input :one_word %>
+<%= f.input :content %>
+<%= f.input :experience %>
+<%= f.input :why %>
+<%= f.input :prove %>
+<%= f.input :action %>
+<%= f.input :attachment %>
 
   <%= f.submit "送出" %>
 <% end %>

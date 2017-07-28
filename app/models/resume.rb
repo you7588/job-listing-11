@@ -12,7 +12,12 @@
 #
 
 class Resume < ApplicationRecord
+  validates :one_word, presence: true
   validates :content, presence: true
+  validates :experience, presence: true
+  validates :why, presence: true
+  validates :prove, presence: true
+  validates :action, presence: true
 
   belongs_to :user
 
