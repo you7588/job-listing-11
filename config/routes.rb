@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :jobs
 
   resources :resumes
+  resources :events
 
 
   root 'welcome#index'
