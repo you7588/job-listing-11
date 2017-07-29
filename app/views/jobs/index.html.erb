@@ -1,16 +1,28 @@
 <div class="container">
   <div class="row">
-<div class="dropdown clearfix pull-right">
-    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuDivider" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-      排序
-        <span class="caret"></span>
-    </button>
-    <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
+    <div class="page-header">
+      <h1>职缺<small>Position</small></h1>
+    </div>
+    <div class="col-md-3">
+      <h3>招聘渠道<h3>
+      <div class="btn-group-vertical btn-group-lg " role="group" aria-label="...">
+        <button type="button" class="btn btn-warning"><a href="http://rubyconfchina.org/">研讨会</a></button>
+         <button type="button" class="btn btn-success"><a href="https://www.zhipin.com/">BOSS直聘</a></button>
+         <button type="button" class="btn btn-danger"><a href="http://www.lagou.com ">拉勾</a></button>
+         <button type="button" class="btn btn-info"><a href="http://ruby-china.org ">RubyChina</a></button>
+       </div>
+    </div>
+    <div class="col-md-9">
+    <div class="dropdown clearfix pull-right">
+      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuDivider" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+      排序<span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
         <li>
           <%= link_to("按照薪资下限排序", jobs_path(:order => "by_lower_bound")) %>
         </li>
         <li>
-            <%= link_to("按照薪资上限排序", jobs_path(:order => "by_upper_bound")) %>
+          <%= link_to("按照薪资上限排序", jobs_path(:order => "by_upper_bound")) %>
         </li>
         <li>
           <%= link_to("按照发表时间排序", jobs_path ) %>
@@ -19,5 +31,6 @@
 </div>
 
 <%= render :partial => "job", :collection => @jobs, :as => :job %>
+</div>
 </div>
 </div>
