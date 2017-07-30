@@ -1,13 +1,10 @@
-<h1>新建简历</h1>
+<div class="container">
+  <div class="col-md-12">
+    <h1>新建简历</h1>
 
-<%= simple_form_for @resume do |f| %>
-  <%= f.input :one_word %>
-  <%= f.input :content %>
-  <%= f.input :experience %>
-  <%= f.input :why %>
-  <%= f.input :prove %>
-  <%= f.input :action %>
-  <%= f.input :attachment %>
+    <hr>
 
-  <%= f.submit "送出" %>
-<% end %>
+    <%= render "form" %>
+
+  </div>
+</div>
