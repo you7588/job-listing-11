@@ -24,6 +24,13 @@ class Job < ApplicationRecord
   validates :source, presence: true
   validates :place, presence: true
   validates :scale, presence: true
+  validates :job_experience, presence: true
+  validates :education_background, presence: true
+  validates :skill, presence: true
+  validates :company, presence: true
+  validates :financing_stage, presence: true
+  validates :industry, presence: true
+  validates :job_category, presence: true
 
   def publish!
     self.is_hidden = false
