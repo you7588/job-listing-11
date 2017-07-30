@@ -1,3 +1,5 @@
+
+
 <div class="col-md-10 job-box">
   <div class="col-md-6">
     <h3><%= link_to(job.title, job_path(job)) %></h3>
@@ -5,8 +7,11 @@
     <p><%= job.wage_lower_bound %> ~ <%= job.wage_upper_bound %></p>
   </div>
   <div class="col-md-4">
-    <h3><%= job.source %></h3>
+    <h3><a href="<%= job.source %>">直通车</a></h3>  
     <p><%= job.place %></p>
     <p><%= job.scale %></p>
   </div>
+  <%= link_to("Edit", edit_job_path(job), :class => "btn btn-xs btn-info") %>
+  <%= link_to("Destroy", job_path(job), :method => :delete, :class => "btn btn-xs btn-danger", :data => { :confirm => "Are you sure?" }) %>
+
 </div>
