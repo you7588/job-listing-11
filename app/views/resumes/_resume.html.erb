@@ -1,50 +1,83 @@
-<div class="panel panel-default">
-    <div class="panel-heading">
-        <div class="row">
-            <div class="col-md-12">
-                <h3 class="panel-title">
-                    创建时间：<%= resume.created_at %>
-                </h3>
-            </div>
+<div class="sweet">
+  <div class="container">
+    <div class="col-md-11">
+      <div class="row">
 
+        <h1 class="title">
+          <%= resume.one_word %>
+          <small class="pull-right">创建时间：<%= resume.created_at %></small>
+        </h1>
+
+      </div>
+      <hr style="border-top: 2.5px solid #ffa802;">
+
+      <div class="sectionTitle">
+        <div class="row">
+          <div class="col-md-2">
+            <h3>关于我</h3>
+          </div>
+          <div class="col-md-10">
+            <%= resume.content  %>
+          </div>
         </div>
-    </div>
-    <div class="panel-body">
-        <div class="trix-content">
-          <h4>一句话</h4>
-          <hr>
-          <%= resume.one_word   %>
-          <h4>关于我　</h4>
-          <hr>
-          <%= resume.content  %>
-          <h4>我做过什么</h4>
-          <hr>
-          <%= resume.experience  %>
-          <h4>为何应聘</h4>
-          <hr>
-          <%= resume.why %>
-          <h4>为何选我</h4>
-          <hr>
-          <%= resume.prove %>
-          <h4>项目展示</h4>
-          <hr>
-          <% if resume.attachment.present? %>
-            <i class="fa fa-paperclip"> </i>
+        <hr>
+        <div class="row">
+          <div class="col-md-2">
+            <h3>我做过什么</h3>
+          </div>
+          <div class="col-md-10">
+            <%= resume.experience  %>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-md-2">
+            <h3>为何应聘</h3>
+          </div>
+          <div class="col-md-10">
+            <%= resume.why %>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-md-2">
+            <h3>为何选我</h3>
+          </div>
+          <div class="col-md-10">
+            <%= resume.prove %>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-md-2">
+            <h3>项目展示</h3>
+          </div>
+          <div class="col-md-10">
+            <% if resume.attachment.present? %>
+            <i class="fa fa-paperclip"></i>
             <%= link_to("Download Resume", resume.attachment_url) %>
           <% else %>
-             No Attachment
-          <% end %>
-          <h4>联系方式</h4>
-          <hr>
-          <%= resume.action  %>
-
-
+            No Attachment
+            <% end %>
+          </div>
         </div>
-
         <hr>
-        <%= link_to("编辑", edit_resume_path(resume)) %> |
-        <%= link_to("删除", resume_path(resume), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
+        <div class="row">
+          <div class="col-md-2">
+            <h3>联系方式</h3>
+          </div>
+          <div class="col-md-10">
+            <%= resume.action  %>
+          </div>
+        </div>
+        <hr>
 
+        <div class="row pull-right">
+          <%= link_to("编辑", edit_resume_path(resume)) %>
+          |
+          <%= link_to("删除", resume_path(resume), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
+        </div>
+      </div>
     </div>
-
+  </div>
 </div>
