@@ -1,3 +1,14 @@
 // Place all the styles related to the jobs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.job-box {
+    border: 1.5px solid #ddd;
+    box-shadow: 1px 1px 5px #ccc;
+    margin-top: 12.5px;
+    padding: 15px 1px 1px 1px;
+    background-color: #fff;
+    color: #555;
+    font-size: 16px;
+    font-family: "Hiragino Sans GB","Microsoft Yahei",SimSun,Arial,"Helvetica Neue",Helvetica;
+}
