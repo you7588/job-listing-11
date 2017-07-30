@@ -74,10 +74,8 @@
 
           <div class="row pull-right">
             <p>创建时间：<%= resume.created_at %>
-              |
-              <%= link_to("编辑", edit_resume_path(resume)) %>
-              |
-              <%= link_to("删除", resume_path(resume), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
+              <button type="button" class="btn btn-sm btn-info"><%= link_to("编辑", edit_resume_path(resume)) %></button>
+              <button type="button" class="btn btn-sm btn-danger"><%= link_to("删除", resume_path(resume), :method => :delete, :data => { :confirm => "Are you sure?" }) %></button>
             </p>
           </div>
         </div>
