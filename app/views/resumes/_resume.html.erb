@@ -1,81 +1,85 @@
 <div class="sweet">
   <div class="container">
-    <div class="col-md-11">
-      <div class="row">
+    <div class="col-md-12">
+      <div class="resume-content">
+        <div class="row">
+          <h1>
+            你好，我是<%= current_user.email %>
+          </h1>
+          <h3>
+            <%= simple_format(resume.one_word) %></h3>
+        </div>
+        <hr style="border-top: 2.5px solid #ffa802;">
 
-        <h1 class="title">
-          <%= resume.one_word %>
-          <small class="pull-right">创建时间：<%= resume.created_at %></small>
-        </h1>
+        <div class="sectionTitle">
+          <div class="row">
+            <div class="col-md-3">
+              <h3>关于我</h3>
+            </div>
+            <div class="col-md-9">
+              <%= simple_format(resume.content)  %>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-md-3">
+              <h3>我做过什么</h3>
+            </div>
+            <div class="col-md-9">
+              <%= simple_format(resume.experience)  %>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-md-3">
+              <h3>为何应聘</h3>
+            </div>
+            <div class="col-md-9">
+              <%= simple_format(resume.why) %>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-md-3">
+              <h3>为何选我</h3>
+            </div>
+            <div class="col-md-9">
+              <%= simple_format(resume.prove) %>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-md-3">
+              <h3>项目展示</h3>
+            </div>
+            <div class="col-md-9">
+              <% if resume.attachment.present? %>
+              <i class="fa fa-paperclip"></i>
+              <%= link_to("Download Resume", resume.attachment_url) %>
+            <% else %>
+              No Attachment
+              <% end %>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-md-3">
+              <h3>联系方式</h3>
+            </div>
+            <div class="col-md-9">
+              <%= simple_format(resume.action)  %>
+            </div>
+          </div>
+          <hr>
 
-      </div>
-      <hr style="border-top: 2.5px solid #ffa802;">
-
-      <div class="sectionTitle">
-        <div class="row">
-          <div class="col-md-2">
-            <h3>关于我</h3>
+          <div class="row pull-right">
+            <p>创建时间：<%= resume.created_at %>
+              |
+              <%= link_to("编辑", edit_resume_path(resume)) %>
+              |
+              <%= link_to("删除", resume_path(resume), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
+            </p>
           </div>
-          <div class="col-md-10">
-            <%= resume.content  %>
-          </div>
-        </div>
-        <hr>
-        <div class="row">
-          <div class="col-md-2">
-            <h3>我做过什么</h3>
-          </div>
-          <div class="col-md-10">
-            <%= resume.experience  %>
-          </div>
-        </div>
-        <hr>
-        <div class="row">
-          <div class="col-md-2">
-            <h3>为何应聘</h3>
-          </div>
-          <div class="col-md-10">
-            <%= resume.why %>
-          </div>
-        </div>
-        <hr>
-        <div class="row">
-          <div class="col-md-2">
-            <h3>为何选我</h3>
-          </div>
-          <div class="col-md-10">
-            <%= resume.prove %>
-          </div>
-        </div>
-        <hr>
-        <div class="row">
-          <div class="col-md-2">
-            <h3>项目展示</h3>
-          </div>
-          <div class="col-md-10">
-            <% if resume.attachment.present? %>
-            <i class="fa fa-paperclip"></i>
-            <%= link_to("Download Resume", resume.attachment_url) %>
-          <% else %>
-            No Attachment
-            <% end %>
-          </div>
-        </div>
-        <hr>
-        <div class="row">
-          <div class="col-md-2">
-            <h3>联系方式</h3>
-          </div>
-          <div class="col-md-10">
-            <%= resume.action  %>
-          </div>
-        </div>
-        <hr>
-
-        <div class="row pull-right">
-          <%= link_to("编辑", edit_resume_path(resume)) %>
-          |
-          <%= link_to("删除", resume_path(resume), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
         </div>
       </div>
     </div>
