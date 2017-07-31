@@ -3,27 +3,27 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .job-box {
-    border: 1.5px solid #ddd;
-    box-shadow: 1px 1px 5px #ccc;
-    margin-top: 12.5px;
-    padding: 15px 1px 1px 1px;
-    background-color: #fff;
-    color: #555;
-    font-size: 16px;
-    font-family: "Hiragino Sans GB","Microsoft Yahei",SimSun,Arial,"Helvetica Neue",Helvetica;
+  border: 1.5px solid #ddd;
+  box-shadow: 1px 1px 5px #ccc;
+  margin-top: 12.5px;
+  padding: 15px 1px 1px;
+  background-color: #fff;
+  color: #555;
+  font-size: 16px;
+  font-family: "Hiragino Sans GB","Microsoft Yahei",SimSun,Arial,"Helvetica Neue",Helvetica;
 }
 
 .wage_show {
-    background: #F3C02F;
-    color: #fff;
-    padding: 4px 8px;
-    border-radius: 9px;
-    font-size: 15px;
+  background: #F3C02F;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 9px;
+  font-size: 15px;
 }
 
 .skill_show {
   border: 1.5px solid #ddd;
-  box-shadow: inset -2px -1px 0px 0px #ccc;
+  box-shadow: inset -2px -1px 0 0 #ccc;
   padding: 4px 8px;
   color: grey;
   border-radius: 5px;
@@ -34,4 +34,19 @@
   width: 50px;
   box-shadow: 1px 1px 3px 2px rgba(134, 130, 130, 0.54);
   border-radius: 25px;
+}
+
+.company {
+  border: 1.5px solid #ddd;
+  padding: 50px 20px;
+  margin-top: -120px;
+}
+
+.content_job {
+  padding: 20px 50px;
+  box-shadow: 9px 4px 18px 1px #ccc;
+  border: 1px solid #ccc;
+  border-radius: 9px;
+  margin: 70px 5%;
+  background-color: white;
 }
