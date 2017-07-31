@@ -3,10 +3,10 @@
     <div class="jumbotron">
 <div class="container">
       <div class="col-md-6">
-                <p style="color:grey">发布于<%= @job.contact_email %></p>
+                <p style="color:grey">发布于...</p>
         <h2>
           <%= @job.title %>
-          <span style="color:green">
+          <span class="wage_show">
             <%= @job.wage_lower_bound %>
             -
             <%= @job.wage_upper_bound %></span>
@@ -16,26 +16,29 @@
           <%= @job.job_experience %>
           |
           <%= @job.education_background %></p>
-        <p class="label label-default"><%= @job.skill %></p>
+        <em class="skill_show"><%= @job.skill %></em>
 
       </div>
 
-      <div class="col-md-4 pull-right">
+      <div class="col-md-4">
         <h3>
-          <a href="<%= @job.source %>"><%= @job.company %></a>
+          <a class="fly" href="<%= @job.source %>"><img src='<%= image_url 'airplane.png' %>' ></a>
         </h3>
         <p><%= @job.industry %>
-          |
+           |
           <%= @job.financing_stage %>
           |
           <%= @job.scale %></p>
-        <p><%= @job.job_category %></p>
+        <p><%= @job.job_category%></p>
       </div>
+    </div>
+    <div class="col-md-2 pull-right">
+      <a href="<%= @job.source %>"><%= @job.company %></a>
     </div>
 
   </div>
   <div class="container">
-    
+
     <p>工作内容：<%= simple_format(@job.description) %></p>
   </div>
 </div>
