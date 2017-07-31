@@ -10,7 +10,17 @@
 <%= f.input :financing_stage, :label => "融资阶段" %>
 <%= f.input :industry, :label => "行业领域" %>
 <!-- <%= f.input :job_category, :label => "工作性质" %> -->
-<%= f.input :source, :label => "来源（网址）" %>
+  <%= f.label :status, :label => "工作性质：" %>
+
+<div class="btn-group" >
+  <% Job::STATUS.each do |status| %>
+     <label class="btn btn-default">
+       <%= f.radio_button :status, status %>
+       <%= t(status, :scope => "job.status") %>
+     </label>
+   <% end %>
+</div>
+<p><%= f.input :source, :label => "来源（网址）" %></p>
 <%= f.input :place, :label => "城市" %>
 <%= f.input :scale, :label => "公司规模" %>
 <%= f.input :contact_email, :label => "联系方式" %>
@@ -18,14 +28,6 @@
 <%= f.input :description, :label => "内容（职位描述、团队介绍、工作地址）" %>
 <%= f.input :is_hidden, :label => "隐藏" %>
 
-<div class="form-group">
-  <%= f.label :status %>
-  <% Job::STATUS.each do |status| %>
-     <label>
-       <%= f.radio_button :status, status %>
-       <%= t(status, :scope => "job.status") %>
-     </label>
-   <% end %>
-</div>
+
   <%= f.submit "Submit" %>
 <% end %>
