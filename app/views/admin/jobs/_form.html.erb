@@ -17,6 +17,10 @@
 <hr>
 <%= f.input :description, :label => "内容（职位描述、团队介绍、工作地址）" %>
 <%= f.input :is_hidden, :label => "隐藏" %>
+<div class="form-group">
+  <%= f.label :status %>
 
+  <%= f.select :status, Job::STATUS.map{ |s| [t(s, :scope => "job.status"), s] }, {}, :class => "form-control" %>
+</div>
   <%= f.submit "Submit" %>
 <% end %>

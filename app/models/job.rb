@@ -32,6 +32,9 @@ class Job < ApplicationRecord
   validates :industry, presence: true
   validates :job_category, presence: true
 
+  STATUS = ["full_time", "part_time", "internship"]
+  validates_inclusion_of :status, :in => STATUS
+  
   def publish!
     self.is_hidden = false
     self.save
