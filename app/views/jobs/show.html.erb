@@ -3,7 +3,7 @@
     <div class="jumbotron">
 <div class="container">
       <div class="col-md-6">
-                <p style="color:grey">发布于...</p>
+                <p style="color:grey">发布于<%= @job.created_at.to_s(:ymd) %></p>
         <h2>
           <%= @job.title %>
           <span class="wage_show">
