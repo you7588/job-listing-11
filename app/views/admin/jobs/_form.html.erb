@@ -5,6 +5,15 @@
 <%= f.input :wage_upper_bound, :label => "薪资上限" %>
 <%= f.input :job_experience, :label => "工作经验" %>
 <%= f.input :education_background, :label => "学历要求" %>
+<div class="form-group">
+  <%= f.label :status%>
+  <% Job::STATUS.each do |status| %>
+     <label>
+       <%= f.radio_button :status, status %>
+       <%= t(status, :scope => "job.status") %>
+     </label>
+   <% end %>
+</div>
 <%= f.input :skill, :label => "技能要求" %>
 <%= f.input :company, :label => "公司名" %>
 <%= f.input :financing_stage, :label => "融资阶段" %>
@@ -17,14 +26,7 @@
 <hr>
 <%= f.input :description, :label => "内容（职位描述、团队介绍、工作地址）" %>
 <%= f.input :is_hidden, :label => "隐藏" %>
-<div class="form-group">
-  <%= f.label :status %>
-  <% Job::STATUS.each do |status| %>
-     <label>
-       <%= f.radio_button :status, status %>
-       <%= t(status, :scope => "job.status") %>
-     </label>
-   <% end %>
-</div>
+
+
   <%= f.submit "Submit" %>
 <% end %>
