@@ -19,8 +19,12 @@
 <%= f.input :is_hidden, :label => "隐藏" %>
 <div class="form-group">
   <%= f.label :status %>
-
-  <%= f.select :status, Job::STATUS.map{ |s| [t(s, :scope => "job.status"), s] }, {}, :class => "form-control" %>
+  <% Job::STATUS.each do |status| %>
+     <label>
+       <%= f.radio_button :status, status %>
+       <%= t(status, :scope => "job.status") %>
+     </label>
+   <% end %>
 </div>
   <%= f.submit "Submit" %>
 <% end %>
