@@ -1,10 +1,9 @@
-
-  <div class="row">
-    <div class="jumbotron">
-<div class="container">
+<div class="row">
+  <div class="jumbotron">
+    <div class="container">
       <div class="col-md-6">
-        <h2><%= display_job_status(@job) %></h2>
-                <p style="color:grey">发布于<%= @job.created_at.to_s(:ymd) %></p>
+
+        <p style="color:grey">发布于<%= @job.created_at.to_s(:ymd) %></p>
         <h2>
           <%= @job.title %>
           <span class="wage_show">
@@ -23,29 +22,30 @@
 
       <div class="col-md-4">
         <h3>
-          <a class="fly" href="<%= @job.source %>"><img src='<%= image_url 'airplane.png' %>' ></a>
+          <a class="fly" href="<%= @job.source %>"><img src='<%= image_url ' airplane.png' %>'></a>
         </h3>
         <p><%= @job.industry %>
-           |
+          |
           <%= @job.financing_stage %>
           |
           <%= @job.scale %></p>
-        <p><%= @job.job_category%></p>
+        <p><%= display_job_status(@job) %></p>
+        <!-- <p><%= @job.job_category%></p> -->
       </div>
     </div>
     <div class="col-md-2 pull-right">
       <div class="company">
-      <%= @job.company %>(图片+链接)
+        <%= @job.company %>(图片+链接)
+      </div>
     </div>
-</div>
   </div>
-      <div class="content_job">
-  <div class="container">
-    <div class="row">
+  <div class="content_job">
+    <div class="container">
+      <div class="row">
 
-    <h3>工作内容：</h3>
-    <p><%= simple_format(@job.description) %></p>
-  </div>
-  </div>
+        <h3>工作内容：</h3>
+        <p><%= simple_format(@job.description) %></p>
+      </div>
+    </div>
   </div>
 </div>
