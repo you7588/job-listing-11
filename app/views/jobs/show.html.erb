@@ -1,6 +1,41 @@
-<h1> <%= @job.title %></h1>
 
-<p>工作内容：<%= simple_format(@job.description) %></p>
-<p>工作来源：<%= simple_format(@job.source) %></p>
-<p>城市：<%= simple_format(@job.place) %></p>
-<p>公司规模：<%= simple_format(@job.scale) %></p>
+  <div class="row">
+    <div class="jumbotron">
+<div class="container">
+      <div class="col-md-6">
+                <p style="color:grey">发布于<%= @job.contact_email %></p>
+        <h2>
+          <%= @job.title %>
+          <span style="color:green">
+            <%= @job.wage_lower_bound %>
+            -
+            <%= @job.wage_upper_bound %></span>
+        </h2>
+        <p><%= @job.place %>
+          |
+          <%= @job.job_experience %>
+          |
+          <%= @job.education_background %></p>
+        <p class="label label-default"><%= @job.skill %></p>
+
+      </div>
+
+      <div class="col-md-4 pull-right">
+        <h3>
+          <a href="<%= @job.source %>"><%= @job.company %></a>
+        </h3>
+        <p><%= @job.industry %>
+          |
+          <%= @job.financing_stage %>
+          |
+          <%= @job.scale %></p>
+        <p><%= @job.job_category %></p>
+      </div>
+    </div>
+
+  </div>
+  <div class="container">
+    
+    <p>工作内容：<%= simple_format(@job.description) %></p>
+  </div>
+</div>
