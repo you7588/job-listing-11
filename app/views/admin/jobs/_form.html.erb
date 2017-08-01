@@ -23,9 +23,13 @@
 <%= f.input :place, :label => "城市" %>
 <%= f.input :scale, :label => "公司规模" %>
 <%= f.input :contact_email, :label => "联系方式" %>
+
+<%= f.input :description, as: :ckeditor, :label => "内容（职位描述、团队介绍、工作地址）" %>
+
 <hr>
-<%= f.input :description, :label => "内容（职位描述、团队介绍、工作地址）" %>
 <%= f.input :is_hidden, :label => "隐藏" %>
+
+<hr>
 
 
   <%= f.submit "Submit" %>
