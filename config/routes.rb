@@ -17,4 +17,5 @@ Rails.application.routes.draw do
 
 
   root 'welcome#index'
+  get "/faq" => "pages#faq"
 end
