@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resource :user
+
   namespace :admin do
     resources :jobs do
       member do

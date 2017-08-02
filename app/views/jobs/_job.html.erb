@@ -10,7 +10,7 @@
     <h3><%= link_to(job.title, job_path(job)) %> <span style="color:green"> <%= job.wage_lower_bound %> - <%= job.wage_upper_bound %></span></h3>
     <p><%= job.place %> | <%= job.job_experience %> | <%= job.education_background %></p>
     <p class="label label-default"><%= job.skill %></p>
-    <p style="color:grey">发布于<%= job.contact_email %></p>
+    <p style="color:grey">发布于<%= job.created_at.to_s %></p>
   </div>
   <div class="col-md-4 pull-right">
     <h3><a href="<%= job.source %>"><%= job.company %></a></h3>
