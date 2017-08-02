@@ -1,3 +1,24 @@
 "zh-CN":
   hello: "亲~ %{name} 你好"
   position: 职缺
+  activerecord:
+    attributes:
+      job:
+        title: "职位"
+        wage_lower_bound: "薪资下限"
+        wage_upper_bound: "薪资上限"
+        job_experience: "工作经验"
+        education_background: "学历要求"
+        skill: "技能要求"
+        company: "公司名"
+        financing_stage: "融资阶段"
+        industry: "行业领域"
+        status: "工作性质："
+        job.status: "工作性质"
+        source: "来源（网址）"
+        place: "城市"
+        scale: "公司规模"
+        contact_email: "联系方式"
+        description: "内容（职位描述、团队介绍、工作地址）"
+        is_hidden: "隐藏"
+        

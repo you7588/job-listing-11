@@ -1,16 +1,16 @@
 <%= simple_form_for @job do |f| %>
 
-<%= f.input :title, :label => "职位" %>
-<%= f.input :wage_lower_bound, :label => "薪资下限" %>
-<%= f.input :wage_upper_bound, :label => "薪资上限" %>
-<%= f.input :job_experience, :label => "工作经验" %>
-<%= f.input :education_background, :label => "学历要求" %>
-<%= f.input :skill, :label => "技能要求" %>
-<%= f.input :company, :label => "公司名" %>
-<%= f.input :financing_stage, :label => "融资阶段" %>
-<%= f.input :industry, :label => "行业领域" %>
+<%= f.input :title  %>
+<%= f.input :wage_lower_bound %>
+<%= f.input :wage_upper_bound %>
+<%= f.input :job_experience %>
+<%= f.input :education_background %>
+<%= f.input :skill %>
+<%= f.input :company %>
+<%= f.input :financing_stage %>
+<%= f.input :industry %>
 <!-- <%= f.input :job_category, :label => "工作性质" %> -->
-<%= f.label :status, :label => "工作性质：" %>
+<%= f.label :status %>
 
 <div class="btn-group">
   <% Job::STATUS.each do |status| %>
@@ -20,13 +20,13 @@
   </label>
   <% end %>
 </div>
-<p><%= f.input :source, :label => "来源（网址）" %></p>
-<%= f.input :place, :label => "城市" %>
-<%= f.input :scale, :label => "公司规模" %>
-<%= f.input :contact_email, :label => "联系方式" %>
+<p><%= f.input :source %></p>
+<%= f.input :place %>
+<%= f.input :scale %>
+<%= f.input :contact_email %>
 <hr>
-<%= f.input :description, as: :ckeditor, :label => "内容（职位描述、团队介绍、工作地址）" %>
-<%= f.input :is_hidden, :label => "隐藏" %>
+<%= f.input :description, as: :ckeditor %>
+<%= f.input :is_hidden %>
 
 <%= f.submit "Submit" %>
 <% end %>
