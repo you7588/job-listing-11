@@ -1,4 +1,9 @@
 "zh-CN":
+  job:
+    status:
+      full_time: 全职
+      part_time: 兼职
+      internship: 实习
   hello: "亲~ %{name} 你好"
   position: 职缺
   activerecord:

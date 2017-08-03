@@ -29,7 +29,7 @@
           <%= @job.financing_stage %>
           |
           <%= @job.scale %></p>
-        <p><%= display_job_status(@job) %></p>
+        <p><%= t(@job.status, :scope => "job.status") %></p>
         <!-- <p><%= @job.job_category%></p> -->
       </div>
     </div>

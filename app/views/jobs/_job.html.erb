@@ -15,7 +15,7 @@
   <div class="col-md-4 pull-right">
     <h3><a href="<%= job.source %>"><%= job.company %></a></h3>
     <p><%= job.industry %> | <%= job.financing_stage %> | <%= job.scale %></p>
-    <p><%= display_job_status(job) %></p>
+    <p><%= t(job.status, :scope => "job.status") %></p>
   </div>
 
 </div>
