@@ -24,6 +24,16 @@ class Job < ApplicationRecord
   validates :source, presence: true
   validates :place, presence: true
   validates :scale, presence: true
+  validates :job_experience, presence: true
+  validates :education_background, presence: true
+  validates :skill, presence: true
+  validates :company, presence: true
+  validates :financing_stage, presence: true
+  validates :industry, presence: true
+
+
+  STATUS = ["full_time", "part_time", "internship"]
+  validates_inclusion_of :status, :in => STATUS
 
   def publish!
     self.is_hidden = false
@@ -36,5 +46,9 @@ class Job < ApplicationRecord
   end
   scope :published, -> { where(is_hidden: false) }
   scope :recent, -> { order('created_at DESC')}
+
+  def to_param
+    "#{self.id}-#{self.title}"
+  end
 
 end

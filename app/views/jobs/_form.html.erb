@@ -1,0 +1,32 @@
+<%= simple_form_for @job do |f| %>
+
+<%= f.input :title  %>
+<%= f.input :wage_lower_bound %>
+<%= f.input :wage_upper_bound %>
+<%= f.input :job_experience %>
+<%= f.input :education_background %>
+<%= f.input :skill %>
+<%= f.input :company %>
+<%= f.input :financing_stage %>
+<%= f.input :industry %>
+<!-- <%= f.input :job_category, :label => "工作性质" %> -->
+<%= f.label :status %>
+
+<div class="btn-group">
+  <% Job::STATUS.each do |status| %>
+  <label class="btn btn-default">
+    <%= f.radio_button :status, status %>
+    <%= t(status, :scope => "job.status") %>
+  </label>
+  <% end %>
+</div>
+<p><%= f.input :source %></p>
+<%= f.input :place %>
+<%= f.input :scale %>
+<%= f.input :contact_email %>
+<hr>
+<%= f.input :description, as: :ckeditor %>
+<%= f.input :is_hidden %>
+
+<%= f.submit "Submit" %>
+<% end %>

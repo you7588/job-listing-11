@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resource :user
+
   namespace :admin do
     resources :jobs do
       member do
@@ -17,4 +19,5 @@ Rails.application.routes.draw do
 
 
   root 'welcome#index'
+  get "/faq" => "pages#faq"
 end
