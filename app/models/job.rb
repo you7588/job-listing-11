@@ -17,19 +17,9 @@
 #
 
 class Job < ApplicationRecord
-  validates :title, presence: true
-  validates :wage_upper_bound, presence: true
-  validates :wage_lower_bound, presence: true
+  validates :title, :wage_upper_bound, :wage_lower_bound, presence: true
   validates :wage_lower_bound, numericality: { greater_than: 0}
-  validates :source, presence: true
-  validates :place, presence: true
-  validates :scale, presence: true
-  validates :job_experience, presence: true
-  validates :education_background, presence: true
-  validates :skill, presence: true
-  validates :company, presence: true
-  validates :financing_stage, presence: true
-  validates :industry, presence: true
+  # validates :skill, :company, :financing_stage, :industry, :source, :place, :scale, :job_experience, :education_background, presence: true
 
 
   STATUS = ["full_time", "part_time", "internship"]
