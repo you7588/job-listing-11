@@ -11,7 +11,7 @@
             -
             <%= @job.wage_upper_bound %></span>
         </h2>
-        <p><%= @job.place %>
+        <p><%= @job.city.try(:name) %>
           |
           <%= @job.job_experience %>
           |

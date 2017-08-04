@@ -42,5 +42,6 @@ class Job < ApplicationRecord
   end
 
   belongs_to :education, :optional => true
+  belongs_to :city, :optional => true
 
 end
