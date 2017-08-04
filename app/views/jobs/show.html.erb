@@ -15,7 +15,7 @@
           |
           <%= @job.job_experience %>
           |
-          <%= @job.education_background %></p>
+          <%= @job.education.try(:name) %></p>
         <em class="skill_show"><%= @job.skill %></em>
 
       </div>

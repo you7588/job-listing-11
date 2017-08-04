@@ -41,4 +41,6 @@ class Job < ApplicationRecord
     "#{self.id}-#{self.title}"
   end
 
+  belongs_to :education, :optional => true
+
 end

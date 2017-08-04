@@ -4,7 +4,10 @@
 <%= f.input :wage_lower_bound %>
 <%= f.input :wage_upper_bound %>
 <%= f.input :job_experience %>
-<%= f.input :education_background %>
+
+<div class="form-group">
+  <%= f.association :education %>
+</div>
 <%= f.input :skill %>
 <%= f.input :company %>
 <%= f.input :financing_stage %>
