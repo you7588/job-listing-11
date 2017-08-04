@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resource :user
 
   namespace :admin do
+    resources :users
     resources :jobs do
       member do
         post :publish
