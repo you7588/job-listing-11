@@ -3,14 +3,13 @@
 <%= f.input :title  %>
 <%= f.input :wage_lower_bound %>
 <%= f.input :wage_upper_bound %>
-<%= f.input :job_experience %>
 
 <div class="form-group">
   <%= f.association :education %>
 </div>
+
 <%= f.input :skill %>
 <%= f.input :company %>
-<%= f.input :financing_stage %>
 <%= f.input :industry %>
 <p><%= f.input :source %></p>
 <%= f.association :city %>
@@ -46,6 +45,18 @@
     <%= job_experience %>
   </label>
   <% end %>
+</div>
+
+<br>
+<br>
+<%= f.label :financing_stage %>：
+<div class="btn-group">
+<% Job::FINANCING_STAGE.each do |financing_stage| %>
+<label class="btn btn-default">
+  <%= f.radio_button :financing_stage, financing_stage %>
+  <%= financing_stage %>
+</label>
+<% end %>
 </div>
 
 <hr>

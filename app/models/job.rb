@@ -26,11 +26,10 @@ class Job < ApplicationRecord
   validates_inclusion_of :status, :in => STATUS
 
   SCALE = ["0~20人", "20~99人", "100~499人", "500~999人", "1000~9999人", "10000人以上"]
-  validates_inclusion_of :scale, :in => SCALE
 
   JOB_EXPERIENCE = ["应届生", "1年以内", "1~3年", "3~5年", "5~10年", "10年以上"]
 
-
+  FINANCING_STAGE = ["未融资", "天使轮", "A轮", "B轮", "C轮", "D轮以上", "已上市", "不需要融资"]
 
   def publish!
     self.is_hidden = false
