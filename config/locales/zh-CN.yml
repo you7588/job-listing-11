@@ -21,7 +21,7 @@
         status: "工作性质："
         job.status: "工作性质"
         source: "来源（网址）"
-        place: "城市"
+        city: "城市"
         scale: "公司规模"
         contact_email: "联系方式"
         description: "内容（职位描述、团队介绍、工作地址）"

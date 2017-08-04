@@ -24,8 +24,6 @@
   <% end %>
 </div>
 <p><%= f.input :source %></p>
-<%= f.input :place %>
-
 <%= f.association :city %>
 <%= f.input :scale %>
 <%= f.input :contact_email %>
@@ -35,3 +33,8 @@
 
 <%= f.submit "Submit" %>
 <% end %>
+
+
+<script>
+  $("#job_city_id").select2( { theme: "bootstrap"} );
+</script>
