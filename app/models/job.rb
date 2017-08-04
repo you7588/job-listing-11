@@ -25,6 +25,9 @@ class Job < ApplicationRecord
   STATUS = ["full_time", "part_time", "internship"]
   validates_inclusion_of :status, :in => STATUS
 
+  SCALE = ["0~20人", "20~99人", "100~499人", "500~999人", "1000~9999人", "10000人以上"]
+  validates_inclusion_of :scale, :in => SCALE
+
   def publish!
     self.is_hidden = false
     self.save

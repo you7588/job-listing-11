@@ -12,9 +12,22 @@
 <%= f.input :company %>
 <%= f.input :financing_stage %>
 <%= f.input :industry %>
-<!-- <%= f.input :job_category, :label => "工作性质" %> -->
-<%= f.label :status %>
+<p><%= f.input :source %></p>
+<%= f.association :city %>
+<%= f.input :contact_email %>
 
+<%= f.label :scale %>：
+<div class="btn-group">
+  <% Job::SCALE.each do |scale| %>
+  <label class="btn btn-default">
+    <%= f.radio_button :scale, scale %>
+    <%= scale %>
+  </label>
+  <% end %>
+</div>
+<br>
+<br>
+<%= f.label :status %>
 <div class="btn-group">
   <% Job::STATUS.each do |status| %>
   <label class="btn btn-default">
@@ -23,10 +36,7 @@
   </label>
   <% end %>
 </div>
-<p><%= f.input :source %></p>
-<%= f.association :city %>
-<%= f.input :scale %>
-<%= f.input :contact_email %>
+
 <hr>
 <%= f.input :description, as: :ckeditor %>
 <%= f.input :is_hidden %>
