@@ -31,6 +31,8 @@ class Job < ApplicationRecord
 
   FINANCING_STAGE = ["未融资", "天使轮", "A轮", "B轮", "C轮", "D轮以上", "已上市", "不需要融资"]
 
+  EDUCATION_BACKGROUND = ["中专以下", "高中", "大专", "本科", "硕士", "博士"]
+
   def publish!
     self.is_hidden = false
     self.save

@@ -3,18 +3,13 @@
 <%= f.input :title  %>
 <%= f.input :wage_lower_bound %>
 <%= f.input :wage_upper_bound %>
-
-<div class="form-group">
-  <%= f.association :education %>
-</div>
-
 <%= f.input :skill %>
 <%= f.input :company %>
 <%= f.input :industry %>
 <p><%= f.input :source %></p>
 <%= f.association :city %>
 <!-- <%= f.input :contact_email %> -->
-
+<br>
 <%= f.label :scale %>：
 <div class="btn-group">
   <% Job::SCALE.each do |scale| %>
@@ -55,6 +50,18 @@
 <label class="btn btn-default">
   <%= f.radio_button :financing_stage, financing_stage %>
   <%= financing_stage %>
+</label>
+<% end %>
+</div>
+
+<br>
+<br>
+<%= f.label :education_background %>：
+<div class="btn-group">
+<% Job::EDUCATION_BACKGROUND.each do |education_background| %>
+<label class="btn btn-default">
+  <%= f.radio_button :education_background, education_background %>
+  <%= education_background %>
 </label>
 <% end %>
 </div>

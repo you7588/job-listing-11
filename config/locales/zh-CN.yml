@@ -13,7 +13,7 @@
         wage_lower_bound: "薪资下限"
         wage_upper_bound: "薪资上限"
         job_experience: "工作经验"
-        education: "学历要求"
+        education_background: "学历要求"
         skill: "技能要求"
         company: "公司名"
         financing_stage: "融资阶段"
