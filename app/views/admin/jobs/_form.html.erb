@@ -3,15 +3,25 @@
 <%= f.input :title  %>
 <%= f.input :wage_lower_bound %>
 <%= f.input :wage_upper_bound %>
-<%= f.input :job_experience %>
-<%= f.input :education_background %>
 <%= f.input :skill %>
 <%= f.input :company %>
-<%= f.input :financing_stage %>
 <%= f.input :industry %>
-<!-- <%= f.input :job_category, :label => "工作性质" %> -->
+<p><%= f.input :source %></p>
+<%= f.association :city %>
+<!-- <%= f.input :contact_email %> -->
+<br>
+<%= f.label :scale %>：
+<div class="btn-group">
+  <% Job::SCALE.each do |scale| %>
+  <label class="btn btn-default">
+    <%= f.radio_button :scale, scale %>
+    <%= scale %>
+  </label>
+  <% end %>
+</div>
+<br>
+<br>
 <%= f.label :status %>
-
 <div class="btn-group">
   <% Job::STATUS.each do |status| %>
   <label class="btn btn-default">
@@ -20,13 +30,50 @@
   </label>
   <% end %>
 </div>
-<p><%= f.input :source %></p>
-<%= f.input :place %>
-<%= f.input :scale %>
-<%= f.input :contact_email %>
+  <br>
+  <br>
+<%= f.label :job_experience %>：
+<div class="btn-group">
+  <% Job::JOB_EXPERIENCE.each do |job_experience| %>
+  <label class="btn btn-default">
+    <%= f.radio_button :job_experience, job_experience %>
+    <%= job_experience %>
+  </label>
+  <% end %>
+</div>
+
+<br>
+<br>
+<%= f.label :financing_stage %>：
+<div class="btn-group">
+<% Job::FINANCING_STAGE.each do |financing_stage| %>
+<label class="btn btn-default">
+  <%= f.radio_button :financing_stage, financing_stage %>
+  <%= financing_stage %>
+</label>
+<% end %>
+</div>
+
+<br>
+<br>
+<%= f.label :education_background %>：
+<div class="btn-group">
+<% Job::EDUCATION_BACKGROUND.each do |education_background| %>
+<label class="btn btn-default">
+  <%= f.radio_button :education_background, education_background %>
+  <%= education_background %>
+</label>
+<% end %>
+</div>
+
 <hr>
 <%= f.input :description, as: :ckeditor %>
 <%= f.input :is_hidden %>
 
 <%= f.submit "Submit" %>
 <% end %>
+
+
+<script>
+  $("#job_city_id").select2( { theme: "bootstrap"} );
+</script>
