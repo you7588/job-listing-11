@@ -2,6 +2,7 @@ class JobsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destroy]
 
   def index
+    @jobs = Job.rank(:row_order).all
     @jobs = case params[:order]
     when 'by_lower_bound'
       Job.published.order('wage_lower_bound DESC')

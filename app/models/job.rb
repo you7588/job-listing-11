@@ -52,4 +52,7 @@ class Job < ApplicationRecord
   belongs_to :education, :optional => true
   belongs_to :city, :optional => true
 
+  include RankedModel
+  ranks :row_order
+
 end
