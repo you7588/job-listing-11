@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170804142303) do
+ActiveRecord::Schema.define(version: 20170805021601) do
 
   create_table "cities", force: :cascade do |t|
     t.string   "name"
@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 20170804142303) do
     t.string   "status",               default: "full_time"
     t.integer  "education_id"
     t.integer  "city_id"
+    t.date     "release"
     t.index ["city_id"], name: "index_jobs_on_city_id"
     t.index ["education_id"], name: "index_jobs_on_education_id"
   end

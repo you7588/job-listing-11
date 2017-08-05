@@ -3,11 +3,15 @@
 <%= f.input :title  %>
 <%= f.input :wage_lower_bound %>
 <%= f.input :wage_upper_bound %>
+<div class="form-group">
+  <%= f.label :release %>
+  <%= f.text_field :release, :class => "form-control" %>
+</div>
 <%= f.input :skill %>
 <%= f.input :company %>
 <%= f.input :industry %>
-<p><%= f.input :source %></p>
-<%= f.association :city %>
+<%= f.input :source %>
+<p><%= f.association :city %></p>
 <!-- <%= f.input :contact_email %> -->
 <br>
 <%= f.label :scale %>：
@@ -76,4 +80,5 @@
 
 <script>
   $("#job_city_id").select2( { theme: "bootstrap"} );
+  $("#job_release").datepicker({ format: "yyyy-mm-dd"});
 </script>

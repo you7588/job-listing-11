@@ -3,7 +3,7 @@
     <div class="container">
       <div class="col-md-6">
 
-        <p style="color:grey">发布于<%= @job.created_at.to_s(:ymd) %></p>
+        <p style="color:grey">发布于<%= @job.release %></p>
         <h2>
           <%= @job.title %>
           <span class="wage_show">
@@ -45,6 +45,7 @@
 
         <h3>工作内容：</h3>
         <p><%= simple_format(@job.description) %></p>
+        <p class="pull-right">创建于<%= @job.created_at.to_s %></p>
       </div>
     </div>
   </div>

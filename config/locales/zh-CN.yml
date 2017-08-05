@@ -10,6 +10,7 @@
     attributes:
       job:
         title: "职位"
+        release: 发布时间
         wage_lower_bound: "薪资下限"
         wage_upper_bound: "薪资上限"
         job_experience: "工作经验"
