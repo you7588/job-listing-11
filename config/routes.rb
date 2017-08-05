@@ -7,6 +7,9 @@ Rails.application.routes.draw do
       resource :profile, :controller => "user_profiles"
     end
     resources :jobs do
+      collection do
+        post :bulk_update
+      end
       member do
         post :publish
         post :hide

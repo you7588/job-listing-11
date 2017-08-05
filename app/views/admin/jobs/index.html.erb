@@ -5,9 +5,11 @@
 
 <br><br>
 
+<%= form_tag bulk_update_admin_jobs_path, :class => "form-inline" do  %>
 <table class="table table-bordered table-striped custab">
   <thead>
     <tr>
+      <th><%= check_box_tag "全选", "1", false, :id => "toggle_all" %></th>
       <td>职缺</td>
       <td>薪资</td>
       <td>工作来源</td>
@@ -19,6 +21,7 @@
   </thead>
   <% @jobs.each do |job| %>
   <tr>
+    <td><%= check_box_tag "ids[]", job.id %></td>
     <td>
       <%= render_job_status(job) %>
       <%= link_to(job.title, admin_job_path(job)) %>
@@ -44,4 +47,22 @@
   </tr>
   <% end %>
 </table>
+
+<p>
+  <%= select_tag :job_status, options_for_select( Job::STATUS.map{ |s| [t(s, :scope => + "job.status"), s] }), :class => "form-control" %>
+  <%= submit_tag t(:bulk_update), :class => "btn btn-primary" %>
+  <%= submit_tag t(:bulk_delete), :class => "btn btn-danger", :data => { :confirm => "Are you + sure?" } %>
+</p>
+<% end %>
 </div>
+
+
+<script>
+  $("#toggle_all").click(function(){
+    if ( $ (this).prop("checked")) {
+      $("input[name='ids[]']").prop("checked", true);
+    } else {
+      $("input[name='ids[]']").prop("checked", false);
+    }
+  })
+</script>
