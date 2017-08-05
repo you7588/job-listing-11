@@ -17,4 +17,6 @@
 //= require bootstrap/dropdown
 //= require ckeditor/init
 //= require select2
+//= require bootstrap-datepicker/core
+//= require bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN
 //= require_tree .
