@@ -1,5 +1,6 @@
 class JobsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destroy]
+
   def index
     @jobs = case params[:order]
     when 'by_lower_bound'
@@ -56,7 +57,7 @@ class JobsController < ApplicationController
   private
 
   def job_params
-    params.require(:job).permit(:title, :description, :wage_upper_bound, :wage_lower_bound, :contact_email, :is_hidden, :source, :place, :scale, :job_experience, :education_background, :skill, :company, :financing_stage, :industry, :job_category, :status, :education_id, :city_id, :release)
+    params.require(:job).permit(:title, :description, :wage_upper_bound, :wage_lower_bound, :is_hidden, :source, :scale, :job_experience, :education_background, :skill, :company, :financing_stage, :industry, :status, :city_id, :release)
   end
 
 end
