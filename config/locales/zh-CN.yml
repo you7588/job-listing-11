@@ -1,10 +1,18 @@
 "zh-CN":
+  bulk_update: 批次编辑
+  bulk_delete: 批次删除
+  job:
+    status:
+      full_time: 全职
+      part_time: 兼职
+      internship: 实习
   hello: "亲~ %{name} 你好"
   position: 职缺
   activerecord:
     attributes:
       job:
         title: "职位"
+        release: 发布时间
         wage_lower_bound: "薪资下限"
         wage_upper_bound: "薪资上限"
         job_experience: "工作经验"
@@ -16,9 +24,8 @@
         status: "工作性质："
         job.status: "工作性质"
         source: "来源（网址）"
-        place: "城市"
+        city: "城市"
         scale: "公司规模"
         contact_email: "联系方式"
         description: "内容（职位描述、团队介绍、工作地址）"
         is_hidden: "隐藏"
-        

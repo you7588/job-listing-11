@@ -60,11 +60,29 @@ class Admin::JobsController < ApplicationController
     redirect_to :back
   end
 
+  def bulk_update
+    total = 0
+    Array(params[:ids]).each do |job_id|
+      job = Job.find(job_id)
+
+      if params[:commit] == I18n.t(:bulk_update)
+        job.status = params[:job_status]
+        if job.save
+          total += 1
+        end
+      elsif params[:commit] == I18n.t(:bulk_delete)
+        job.destroy
+        total += 1
+      end
+    end
+       flash[:alert] = "成功完成#{total}笔"
+        redirect_to admin_jobs_path
+  end
 
 
   private
 
   def job_params
-    params.require(:job).permit(:title, :description, :wage_upper_bound, :wage_lower_bound, :contact_email, :is_hidden, :source, :place, :scale, :job_experience, :education_background, :skill, :company, :financing_stage, :industry, :job_category, :status)
+    params.require(:job).permit(:title, :description, :wage_upper_bound, :wage_lower_bound, :is_hidden, :source, :scale, :job_experience, :education_background, :skill, :company, :financing_stage, :industry, :status, :city_id, :release)
   end
 end

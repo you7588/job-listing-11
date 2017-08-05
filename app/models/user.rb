@@ -29,4 +29,6 @@ class User < ApplicationRecord
   end
 
   has_many :resumes
+  has_one :profile
+   accepts_nested_attributes_for :profile
 end

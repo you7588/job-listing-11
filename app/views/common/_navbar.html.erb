@@ -14,10 +14,13 @@
         <li><%= link_to("注册", new_user_registration_path) %></li>
         <li><%= link_to("登入", new_user_session_path) %></li>
       <% else %>
-      <br><li class="label label-default" style="font-size:100%" ><%= t( "hello", :name => current_user.email) %></li>
+        <br>
+        <li class="label label-default" style="font-size:100%"><%= t( "hello", :name => current_user.email) %></li>
+        <li><%= link_to('我的个人资料', user_path) %></li>
         <li><%= link_to('修改个人资料', edit_user_path) %></li>
         <% if current_user.admin? %>
         <li><%= link_to("Admin Panel", admin_jobs_path) %></li>
+        <li><%= link_to('用户管理', admin_users_path) %></li>
         <% end %>
         <li><%= link_to("登出", destroy_user_session_path, method: :delete) %></li>
         <% end %>

@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170802094140) do
+ActiveRecord::Schema.define(version: 20170805021601) do
+
+  create_table "cities", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "educations", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "jobs", force: :cascade do |t|
     t.string   "title"
@@ -32,6 +44,24 @@ ActiveRecord::Schema.define(version: 20170802094140) do
     t.string   "industry"
     t.string   "job_category"
     t.string   "status",               default: "full_time"
+    t.integer  "education_id"
+    t.integer  "city_id"
+    t.date     "release"
+    t.index ["city_id"], name: "index_jobs_on_city_id"
+    t.index ["education_id"], name: "index_jobs_on_education_id"
+  end
+
+  create_table "profiles", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "legal_name"
+    t.string   "username"
+    t.date     "birthday"
+    t.string   "location"
+    t.string   "motto"
+    t.string   "wechat"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
   create_table "resumes", force: :cascade do |t|

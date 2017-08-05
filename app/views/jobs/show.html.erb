@@ -3,7 +3,7 @@
     <div class="container">
       <div class="col-md-6">
 
-        <p style="color:grey">发布于<%= @job.created_at.to_s(:ymd) %></p>
+        <p style="color:grey">发布于<%= @job.release %></p>
         <h2>
           <%= @job.title %>
           <span class="wage_show">
@@ -11,7 +11,7 @@
             -
             <%= @job.wage_upper_bound %></span>
         </h2>
-        <p><%= @job.place %>
+        <p><%= @job.city.try(:name) %>
           |
           <%= @job.job_experience %>
           |
@@ -29,7 +29,7 @@
           <%= @job.financing_stage %>
           |
           <%= @job.scale %></p>
-        <p><%= display_job_status(@job) %></p>
+        <p><%= t(@job.status, :scope => "job.status") %></p>
         <!-- <p><%= @job.job_category%></p> -->
       </div>
     </div>
@@ -45,6 +45,7 @@
 
         <h3>工作内容：</h3>
         <p><%= simple_format(@job.description) %></p>
+        <p class="pull-right">创建于<%= @job.created_at.to_s %></p>
       </div>
     </div>
   </div>
