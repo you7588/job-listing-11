@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   resource :user
 
   namespace :admin do
-    resources :users
+    resources :users do
+      resource :profile, :controller => "user_profiles"
+    end
     resources :jobs do
       member do
         post :publish
