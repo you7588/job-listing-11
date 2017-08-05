@@ -23,6 +23,7 @@ class JobsController < ApplicationController
 
   def new
     @job = Job.new
+    @job.tickets.build
   end
 
   def create
@@ -43,6 +44,7 @@ class JobsController < ApplicationController
 
   def edit
     @job = Job.find(params[:id])
+    @job.tickets.build
   end
 
   def update
@@ -57,7 +59,10 @@ class JobsController < ApplicationController
   private
 
   def job_params
-    params.require(:job).permit(:title, :description, :wage_upper_bound, :wage_lower_bound, :is_hidden, :source, :scale, :job_experience, :education_background, :skill, :company, :financing_stage, :industry, :status, :city_id, :release)
+    params.require(:job).permit(:title, :description, :wage_upper_bound, :wage_lower_bound,
+    :is_hidden, :source, :scale, :job_experience, :education_background, :skill, :company,
+    :financing_stage, :industry, :status, :city_id, :release,
+    :tickets_attributes => [:id, :name, :_destroy])
   end
 
 end

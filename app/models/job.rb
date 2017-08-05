@@ -51,5 +51,7 @@ class Job < ApplicationRecord
 
   belongs_to :education, :optional => true
   belongs_to :city, :optional => true
+  has_many :tickets, :dependent => :destroy, :inverse_of => :job
+  accepts_nested_attributes_for :tickets, :allow_destroy => true, :reject_if => :all_blank
 
 end

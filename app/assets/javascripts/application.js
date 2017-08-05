@@ -19,4 +19,5 @@
 //= require select2
 //= require bootstrap-datepicker/core
 //= require bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN
+//= require nested_form_fields
 //= require_tree .

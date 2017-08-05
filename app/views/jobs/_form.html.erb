@@ -69,6 +69,19 @@
 </label>
 <% end %>
 </div>
+    <legend>Ticket</legend>
+<%= f.nested_fields_for :tickets do |ff| %>
+  <fieldset style="border-left: 5px solid #bbb; margin-bottom: 10px; padding: 10px;">
+
+      <%= ff.label :name %>
+      <%= ff.text_field :name, :class => "form-control" %>
+
+    <%= ff.remove_nested_fields_link "移除", :class => "btn btn-danger" %>
+  </fieldset>
+  <p class="pull-right">
+    <%= f.add_nested_fields_link :tickets, "新增", :class => "btn btn-default" %>
+  </p>
+<% end %>
 
 <hr>
 <%= f.input :description, as: :ckeditor %>
