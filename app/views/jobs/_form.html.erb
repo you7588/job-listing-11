@@ -14,18 +14,6 @@
 <p><%= f.association :city %></p>
 <!-- <%= f.input :contact_email %> -->
 
-<div class="form-group">
-  <p>技能标签：</p>
-
-<%= f.nested_fields_for :tickets do |ff| %>
-
-  <%= ff.text_field :name, :class => "form-control" %>
-<%= ff.remove_nested_fields_link "移除", :class => "btn btn-danger" %>
-  <%= f.add_nested_fields_link :tickets, "新增", :class => "btn btn-default" %>
-<% end %>
-
-</div>
-
 <br>
 <%= f.label :scale %>：
 <div class="btn-group">
