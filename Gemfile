@@ -42,6 +42,7 @@ gem 'select2-rails'
 gem 'bootstrap-datepicker-rails'
 gem 'nested_form_fields'
 gem 'ranked-model'
+gem 'jquery-ui-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

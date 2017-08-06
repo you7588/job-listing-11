@@ -79,6 +79,19 @@ class Admin::JobsController < ApplicationController
         redirect_to admin_jobs_path
   end
 
+  def reorder
+    @job = Job.find(params[:id])
+    @job.row_order_position = params[:position]
+    @job.save!
+
+
+
+    respond_to do |format|
+      format.html { redirect_to admin_jobs_path}
+      format.json { render :json => { :message => "ok" }}
+    end
+  end
+
 
   private
 
