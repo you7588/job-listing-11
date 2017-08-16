@@ -25,8 +25,9 @@ Rails.application.routes.draw do
   resources :events
   resources :welcome
   resources :growths
+  resources :posts
 
 
-  root 'jobs#index'
+  root 'posts#index'
   get "/faq" => "pages#faq"
 end
