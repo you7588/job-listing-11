@@ -22,13 +22,14 @@
       </button>
       <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
         <li>
-          <%= link_to("按照薪资下限排序", jobs_path(:order => "by_lower_bound")) %>
+          <%= link_to("按照薪资排序", jobs_path(:order => "by_lower_bound")) %>
+        </li>
+        <!-- <li><%= link_to("按照薪资上限排序", jobs_path(:order => "by_upper_bound")) %></li> -->
+        <li>
+          <%= link_to("按照发表时间排序", jobs_path(:order => "by_recent") ) %>
         </li>
         <li>
-          <%= link_to("按照薪资上限排序", jobs_path(:order => "by_upper_bound")) %>
-        </li>
-        <li>
-          <%= link_to("按照发表时间排序", jobs_path ) %>
+          <%= link_to("按照自由排序", jobs_path(:order => "by_admin")) %>
         </li>
     </ul>
 </div>

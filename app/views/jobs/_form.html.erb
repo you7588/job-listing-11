@@ -13,6 +13,7 @@
 <%= f.input :source %>
 <p><%= f.association :city %></p>
 <!-- <%= f.input :contact_email %> -->
+
 <br>
 <%= f.label :scale %>：
 <div class="btn-group">
@@ -70,12 +71,15 @@
 <% end %>
 </div>
 
+
+
 <hr>
 <%= f.input :description, as: :ckeditor %>
 <%= f.input :is_hidden %>
 
 <%= f.submit "Submit" %>
 <% end %>
+
 
 
 <script>

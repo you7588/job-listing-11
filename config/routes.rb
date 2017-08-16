@@ -13,6 +13,7 @@ Rails.application.routes.draw do
       member do
         post :publish
         post :hide
+        post :reorder
       end
     end
   end

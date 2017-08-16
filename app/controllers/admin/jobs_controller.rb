@@ -8,7 +8,7 @@ class Admin::JobsController < ApplicationController
   end
 
   def index
-    @jobs = Job.all
+    @jobs = Job.rank(:row_order).all
   end
 
   def new
@@ -79,10 +79,25 @@ class Admin::JobsController < ApplicationController
         redirect_to admin_jobs_path
   end
 
+  def reorder
+    @job = Job.find(params[:id])
+    @job.row_order_position = params[:position]
+    @job.save!
+
+
+
+    respond_to do |format|
+      format.html { redirect_to admin_jobs_path}
+      format.json { render :json => { :message => "ok" }}
+    end
+  end
+
 
   private
 
   def job_params
-    params.require(:job).permit(:title, :description, :wage_upper_bound, :wage_lower_bound, :is_hidden, :source, :scale, :job_experience, :education_background, :skill, :company, :financing_stage, :industry, :status, :city_id, :release)
+    params.require(:job).permit(:title, :description, :wage_upper_bound, :wage_lower_bound,
+    :is_hidden, :source, :scale, :job_experience, :education_background, :skill, :company,
+    :financing_stage, :industry, :status, :city_id, :release)
   end
 end
