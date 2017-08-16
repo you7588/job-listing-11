@@ -23,8 +23,10 @@ Rails.application.routes.draw do
 
   resources :resumes
   resources :events
+  resources :welcome
+  resources :growths
 
 
-  root 'welcome#index'
+  root 'jobs#index'
   get "/faq" => "pages#faq"
 end
