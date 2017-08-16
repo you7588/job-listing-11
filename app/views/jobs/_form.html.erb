@@ -2,9 +2,16 @@
 
 <%= f.input :title  %>
 
+<%= f.input :wage_lower_bound %>
+<%= f.input :wage_upper_bound %>
+
+
+
+<%= f.input :skill %>
 <div class="form-group">
+<%= f.input :company %>
   <%= f.label :logo %>
-  <%= f.file_field :logo, :class => "form-control" %>
+  <%= f.file_field :logo%>
   <% if f.object.logo.present? %>
     <label>
       <%= f.check_box :remove_logo %>删除图档
@@ -13,22 +20,16 @@
     <% end %>
 </div>
 
-<%= f.input :wage_lower_bound %>
-<%= f.input :wage_upper_bound %>
+<%= f.input :industry %>
+<%= f.input :source %>
+<p><%= f.association :city %></p>
+<!-- <%= f.input :contact_email %> -->
 
 <div class="form-group">
   <%= f.label :release %>
   <%= f.date_select :release, :class => "form-control" %>
 </div>
 
-<%= f.input :skill %>
-<%= f.input :company %>
-<%= f.input :industry %>
-<%= f.input :source %>
-<p><%= f.association :city %></p>
-<!-- <%= f.input :contact_email %> -->
-
-<br>
 <%= f.label :scale %>：
 <div class="btn-group">
   <% Job::SCALE.each do |scale| %>

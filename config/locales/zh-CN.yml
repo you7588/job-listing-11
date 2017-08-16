@@ -11,8 +11,9 @@
   activerecord:
     attributes:
       job:
+        logo: "公司图片："
         title: "职位"
-        release: 发布时间
+        release: "发布时间："
         wage_lower_bound: "薪资下限"
         wage_upper_bound: "薪资上限"
         job_experience: "工作经验"
@@ -23,7 +24,7 @@
         industry: "行业领域"
         status: "工作性质："
         job.status: "工作性质"
-        source: "来源（网址）"
+        source: "工作来源（网址）"
         city: "城市"
         scale: "公司规模"
         contact_email: "联系方式"
