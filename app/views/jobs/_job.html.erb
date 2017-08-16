@@ -1,11 +1,11 @@
 
 
 <div class="col-md-12 job-box">
-  <!-- <div class="pull-right">
+  <div class="pull-right">
   <%= link_to("Edit", edit_job_path(job), :class => "btn btn-xs btn-info") %>
   <br>
   <%= link_to("Destroy", job_path(job), :method => :delete, :class => "btn btn-xs btn-danger", :data => { :confirm => "Are you sure?" }) %>
-</div> -->
+</div>
   <div class="col-md-6">
     <h3><%= link_to(job.title, job_path(job)) %> <span style="color:green"> <%= job.wage_lower_bound %> - <%= job.wage_upper_bound %></span></h3>
     <p><%= job.city.try(:name) %> | <%= job.job_experience %> | <%= job.education_background %></p>

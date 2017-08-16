@@ -96,7 +96,7 @@ class Admin::JobsController < ApplicationController
   private
 
   def job_params
-    params.require(:job).permit(:title, :description, :wage_upper_bound, :wage_lower_bound,
+    params.require(:job).permit(:logo, :remove_logo, :title, :description, :wage_upper_bound, :wage_lower_bound,
     :is_hidden, :source, :scale, :job_experience, :education_background, :skill, :company,
     :financing_stage, :industry, :status, :city_id, :release)
   end

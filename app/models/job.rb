@@ -21,6 +21,8 @@ class Job < ApplicationRecord
   validates :wage_lower_bound, numericality: { greater_than: 0}
   # validates :skill, :company, :financing_stage, :industry, :source, :place, :scale, :job_experience, :education_background, presence: true
 
+  mount_uploader :logo, JobLogoUploader
+
 
   STATUS = ["full_time", "part_time", "internship"]
   validates_inclusion_of :status, :in => STATUS

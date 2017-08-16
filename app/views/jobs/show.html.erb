@@ -35,7 +35,10 @@
     </div>
     <div class="col-md-2 pull-right">
       <div class="company">
-        <%= @job.company %>(图片+链接)
+        <%= @job.company %>
+        <% if @job.logo.present? %>
+        <%= link_to image_tag(@job.logo.url(:thumb)), @job.logo.url, :target => "_blank" %>
+        <% end %>
       </div>
     </div>
   </div>
@@ -45,7 +48,7 @@
 
         <h3>工作内容：</h3>
         <p><%= simple_format(@job.description) %></p>
-        <p class="pull-right">创建于<%= @job.created_at.to_s %></p>
+        <p>创建于<%= @job.created_at.to_s %></p>
       </div>
     </div>
   </div>
