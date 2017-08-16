@@ -3,7 +3,7 @@ class JobLogoUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
 
   version :thumb do
-    process resize_to_fit: [200, 200]
+    process resize_to_fit: [150, 150]
   end
 
   # Include RMagick or MiniMagick support:
