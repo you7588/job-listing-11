@@ -23,6 +23,8 @@ class Job < ApplicationRecord
 
   mount_uploader :logo, JobLogoUploader
 
+  belongs_to :user
+
 
   STATUS = ["full_time", "part_time", "internship"]
   validates_inclusion_of :status, :in => STATUS

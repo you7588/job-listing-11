@@ -27,7 +27,7 @@ class User < ApplicationRecord
   def admin?
     is_admin
   end
-
+  had_many :jobs
   has_many :resumes
   has_one :profile
    accepts_nested_attributes_for :profile
