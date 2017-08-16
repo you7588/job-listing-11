@@ -21,7 +21,14 @@
 </div>
 
 <%= f.input :industry %>
-<%= f.input :source %>
+<!-- <%= f.input :source %> -->
+
+
+<div class="form-group">
+  <%= f.label :source %>
+  <%= f.url_field :source, :class => "form-control" %>
+</div>
+
 <p><%= f.association :city %></p>
 <!-- <%= f.input :contact_email %> -->
 
