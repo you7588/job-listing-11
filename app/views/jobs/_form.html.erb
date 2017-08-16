@@ -18,7 +18,7 @@
 
 <div class="form-group">
   <%= f.label :release %>
-  <%= f.text_field :release, :class => "form-control" %>
+  <%= f.date_select :release, :class => "form-control" %>
 </div>
 
 <%= f.input :skill %>
@@ -98,5 +98,4 @@
 
 <script>
   $("#job_city_id").select2( { theme: "bootstrap"} );
-  $("#job_release").datepicker({ format: "yyyy-mm-dd"});
 </script>
