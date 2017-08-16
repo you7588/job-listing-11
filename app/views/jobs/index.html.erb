@@ -24,9 +24,8 @@
         <li>
           <%= link_to("按照薪资排序", jobs_path(:order => "by_lower_bound")) %>
         </li>
-        <!-- <li><%= link_to("按照薪资上限排序", jobs_path(:order => "by_upper_bound")) %></li> -->
         <li>
-          <%= link_to("按照发表时间排序", jobs_path(:order => "by_recent") ) %>
+          <%= link_to("按照发布时间排序", jobs_path(:order => "by_release") ) %>
         </li>
         <li>
           <%= link_to("按照自由排序", jobs_path(:order => "by_admin")) %>

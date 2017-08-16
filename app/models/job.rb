@@ -47,7 +47,8 @@ class Job < ApplicationRecord
     self.save
   end
   scope :published, -> { where(is_hidden: false) }
-  scope :recent, -> { order('created_at DESC')}
+  scope :release, -> { order('release DESC')}
+  scope :wage, -> { order('wage_lower_bound DESC')}
   scope :freedom, -> { rank(:row_order)}
 
   def to_param
