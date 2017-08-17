@@ -2,10 +2,8 @@
 
 <%= f.input :title  %>
 
-<%= f.input :wage_lower_bound %>
-<%= f.input :wage_upper_bound %>
-
-
+<%= f.input :wage_lower_bound, :placeholder => "填写到千位数即可"  %>
+<%= f.input :wage_upper_bound, :placeholder => "填写到千位数即可" %>
 
 <%= f.input :skill %>
 <div class="form-group">
@@ -26,7 +24,7 @@
 
 <div class="form-group">
   <%= f.label :source %>
-  <%= f.url_field :source, :class => "form-control" %>
+  <%= f.url_field :source, :class => "form-control", :placeholder => "填写网址" %>
 </div>
 
 <p><%= f.association :city %></p>

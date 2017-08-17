@@ -9,7 +9,7 @@
 </div>
 <% end %>
   <div class="col-md-6">
-    <h3><%= link_to(job.title, job_path(job)) %> <span style="color:green"> <%= job.wage_lower_bound %> - <%= job.wage_upper_bound %></span></h3>
+    <h3><%= link_to(job.title, job_path(job)) %> <span style="color:green"> <%= job.wage_lower_bound %>K - <%= job.wage_upper_bound %>K</span></h3>
     <p><%= job.city.try(:name) %> | <%= job.job_experience %> | <%= job.education_background %></p>
     <p class="label label-default"></p>
     <p style="color:grey">发布于<%= job.release %></p>

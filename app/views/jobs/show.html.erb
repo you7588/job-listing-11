@@ -7,9 +7,9 @@
         <h2>
           <%= @job.title %>
           <span class="wage_show">
-            <%= @job.wage_lower_bound %>
+            <%= @job.wage_lower_bound %>K
             -
-            <%= @job.wage_upper_bound %></span>
+            <%= @job.wage_upper_bound %>K</span>
         </h2>
         <p><%= @job.city.try(:name) %>
           |
