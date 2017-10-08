@@ -1,11 +1,23 @@
 <%= simple_form_for [:admin, @job ] do |f| %>
 
 <%= f.input :title  %>
+
+<div class="form-group">
+  <%= f.label :logo %>
+  <%= f.file_field :logo, :class => "form-control" %>
+  <% if f.object.logo.present? %>
+    <label>
+      <%= f.check_box :remove_logo %>删除图档
+    </label>
+    <%= link_to f.object.logo.filename, f.object.logo.url, :target => "_blank" %>
+    <% end %>
+</div>
+
 <%= f.input :wage_lower_bound %>
 <%= f.input :wage_upper_bound %>
 <div class="form-group">
   <%= f.label :release %>
-  <%= f.text_field :release, :class => "form-control" %>
+  <%= f.date_select :release, :class => "form-control" %>
 </div>
 <%= f.input :skill %>
 <%= f.input :company %>
@@ -80,5 +92,4 @@
 
 <script>
   $("#job_city_id").select2( { theme: "bootstrap"} );
-  $("#job_release").datepicker({ format: "yyyy-mm-dd"});
 </script>

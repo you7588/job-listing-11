@@ -21,13 +21,17 @@ class Job < ApplicationRecord
   validates :wage_lower_bound, numericality: { greater_than: 0}
   # validates :skill, :company, :financing_stage, :industry, :source, :place, :scale, :job_experience, :education_background, presence: true
 
+  mount_uploader :logo, JobLogoUploader
+
+  belongs_to :user
+
 
   STATUS = ["full_time", "part_time", "internship"]
   validates_inclusion_of :status, :in => STATUS
 
   SCALE = ["0~20人", "20~99人", "100~499人", "500~999人", "1000~9999人", "10000人以上"]
 
-  JOB_EXPERIENCE = ["应届生", "1年以内", "1~3年", "3~5年", "5~10年", "10年以上"]
+  JOB_EXPERIENCE = ["经验不限", "应届生", "1年以内", "1~3年", "3~5年", "5~10年", "10年以上"]
 
   FINANCING_STAGE = ["未融资", "天使轮", "A轮", "B轮", "C轮", "D轮以上", "已上市", "不需要融资"]
 
@@ -43,7 +47,8 @@ class Job < ApplicationRecord
     self.save
   end
   scope :published, -> { where(is_hidden: false) }
-  scope :recent, -> { order('created_at DESC')}
+  scope :release, -> { order('release DESC')}
+  scope :wage, -> { order('wage_lower_bound DESC')}
   scope :freedom, -> { rank(:row_order)}
 
   def to_param

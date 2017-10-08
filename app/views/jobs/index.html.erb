@@ -14,7 +14,7 @@
     </div>
     <div class="col-md-9">
       <div class="pull-right">
-        <%= link_to("Add a job", new_job_path, :class => "btn btn-default" ) %>
+        <%= link_to("添加新工作", new_job_path, :class => "btn btn-default" ) %>
       </div>
     <div class="dropdown clearfix pull-right">
       <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuDivider" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
@@ -24,9 +24,8 @@
         <li>
           <%= link_to("按照薪资排序", jobs_path(:order => "by_lower_bound")) %>
         </li>
-        <!-- <li><%= link_to("按照薪资上限排序", jobs_path(:order => "by_upper_bound")) %></li> -->
         <li>
-          <%= link_to("按照发表时间排序", jobs_path(:order => "by_recent") ) %>
+          <%= link_to("按照发布时间排序", jobs_path(:order => "by_release") ) %>
         </li>
         <li>
           <%= link_to("按照自由排序", jobs_path(:order => "by_admin")) %>

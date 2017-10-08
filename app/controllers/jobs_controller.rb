@@ -5,11 +5,9 @@ class JobsController < ApplicationController
 
     @jobs = case params[:order]
     when 'by_lower_bound'
-      Job.published.order('wage_lower_bound DESC')
-    # when 'by_upper_bound'
-    #   Job.published.order('wage_upper_bound DESC')
-    when 'by_recent'
-      Job.published.recent
+      Job.published.wage
+    when 'by_release'
+      Job.published.release
     else
       Job.published.freedom
     end
@@ -30,6 +28,7 @@ class JobsController < ApplicationController
 
   def create
     @job = Job.new(job_params)
+    @job.user = current_user
     if @job.save
       redirect_to jobs_path
     else
@@ -60,7 +59,7 @@ class JobsController < ApplicationController
   private
 
   def job_params
-    params.require(:job).permit(:title, :description, :wage_upper_bound, :wage_lower_bound,
+    params.require(:job).permit(:logo, :remove_logo, :title, :description, :wage_upper_bound, :wage_lower_bound,
     :is_hidden, :source, :scale, :job_experience, :education_background, :skill, :company,
     :financing_stage, :industry, :status, :city_id, :release)
   end

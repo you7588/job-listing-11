@@ -1,12 +1,15 @@
-<div class="container">
+<div class="col-md-8 col-md-offset-2">
 <h1>我的个人资料</h1>
 
 <p>Email: <%= @user.email %></p>
 <p>Legal_name: <%= @user.profile.legal_name %></p>
 <p>Username: <%= @user.profile.username %></p>
 <p>Wechat: <%= @user.profile.wechat %></p>
-<p>Birthday: <%= @user.profile.birthday %></p>
+<!-- <p>Birthday: <%= @user.profile.birthday %></p> -->
 <p>Location: <%= @user.profile.location %></p>
 <p>Tmiezone: <%= @user.time_zone  %></p>
 <p>Motto: <%= @user.profile.motto %></p>
+
+<%= link_to('修改密码', edit_registration_path(:user)) %>
+<%= link_to('修改个人资料', edit_user_path) %>
 </div>

@@ -7,9 +7,9 @@
         <h2>
           <%= @job.title %>
           <span class="wage_show">
-            <%= @job.wage_lower_bound %>
+            <%= @job.wage_lower_bound %>K
             -
-            <%= @job.wage_upper_bound %></span>
+            <%= @job.wage_upper_bound %>K</span>
         </h2>
         <p><%= @job.city.try(:name) %>
           |
@@ -22,7 +22,8 @@
 
       <div class="col-md-4">
         <h3>
-          <a class="fly" href="<%= @job.source %>"><img src='<%= image_url ' airplane.png' %>'></a>
+          <a href="<%= @job.source %>"><%= @job.company %></a>
+
         </h3>
         <p><%= @job.industry %>
           |
@@ -35,7 +36,9 @@
     </div>
     <div class="col-md-2 pull-right">
       <div class="company">
-        <%= @job.company %>(图片+链接)
+        <% if @job.logo.present? %>
+        <%= link_to image_tag(@job.logo.url(:thumb)), @job.source, :target => "_blank" %>
+        <% end %>
       </div>
     </div>
   </div>
@@ -45,7 +48,7 @@
 
         <h3>工作内容：</h3>
         <p><%= simple_format(@job.description) %></p>
-        <p class="pull-right">创建于<%= @job.created_at.to_s %></p>
+        <p>创建于<%= @job.created_at.to_s %></p>
       </div>
     </div>
   </div>

@@ -6,6 +6,7 @@
       <a href="/resumes">简历</a>
       <a href="/growths">成长</a>
       <a href="/events">大事</a>
+      <a href="/posts">反馈</a>
     </div>
 
     <div class="collapse navbar-collapse">
@@ -17,7 +18,7 @@
         <br>
         <li class="label label-default" style="font-size:100%"><%= t( "hello", :name => current_user.email) %></li>
         <li><%= link_to('我的个人资料', user_path) %></li>
-        <li><%= link_to('修改个人资料', edit_user_path) %></li>
+
         <% if current_user.admin? %>
         <li><%= link_to("Admin Panel", admin_jobs_path) %></li>
         <li><%= link_to('用户管理', admin_users_path) %></li>

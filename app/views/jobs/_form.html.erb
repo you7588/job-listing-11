@@ -1,20 +1,40 @@
 <%= simple_form_for @job do |f| %>
 
 <%= f.input :title  %>
-<%= f.input :wage_lower_bound %>
-<%= f.input :wage_upper_bound %>
-<div class="form-group">
-  <%= f.label :release %>
-  <%= f.text_field :release, :class => "form-control" %>
-</div>
+
+<%= f.input :wage_lower_bound, :placeholder => "填写到千位数即可"  %>
+<%= f.input :wage_upper_bound, :placeholder => "填写到千位数即可" %>
+
 <%= f.input :skill %>
+<div class="form-group">
 <%= f.input :company %>
+  <%= f.label :logo %>
+  <%= f.file_field :logo%>
+  <% if f.object.logo.present? %>
+    <label>
+      <%= f.check_box :remove_logo %>删除图档
+    </label>
+    <%= link_to f.object.logo.filename, f.object.logo.url, :target => "_blank" %>
+    <% end %>
+</div>
+
 <%= f.input :industry %>
-<%= f.input :source %>
+<!-- <%= f.input :source %> -->
+
+
+<div class="form-group">
+  <%= f.label :source %>
+  <%= f.url_field :source, :class => "form-control", :placeholder => "填写网址" %>
+</div>
+
 <p><%= f.association :city %></p>
 <!-- <%= f.input :contact_email %> -->
 
-<br>
+<div class="form-group">
+  <%= f.label :release %>
+  <%= f.date_select :release, :class => "form-control" %>
+</div>
+
 <%= f.label :scale %>：
 <div class="btn-group">
   <% Job::SCALE.each do |scale| %>
@@ -71,10 +91,8 @@
 <% end %>
 </div>
 
-
-
 <hr>
-<%= f.input :description, as: :ckeditor %>
+<%= f.input :description, as: :ckeditor, input_html: {  ckeditor: { toolbar: 'mini' }} %>
 <%= f.input :is_hidden %>
 
 <%= f.submit "Submit" %>
@@ -84,5 +102,4 @@
 
 <script>
   $("#job_city_id").select2( { theme: "bootstrap"} );
-  $("#job_release").datepicker({ format: "yyyy-mm-dd"});
 </script>
