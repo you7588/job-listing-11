@@ -1,5 +1,3 @@
-# README
-
 # 项目名称：找找找工作
 
 # 浏览地址：https://my-job.herokuapp.com/
